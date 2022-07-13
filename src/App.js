@@ -3,7 +3,8 @@ import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { TaskForm } from "./Components/TaskForm";
 import { ListArea } from "./Components/ListArea";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import fetchTasks from "./helpes/axiosHelpers";
 
 const weeklyHours = 7 * 24;
 
@@ -11,6 +12,15 @@ function App() {
   const [tasks, setTasks] = useState([]); // [] is the initial value
   const total = tasks.reduce((acc, item) => acc + +item.hours, 0);
   const [ids, setIds] = useState([]);
+
+  useEffect(() => {
+    getTaskFromServer();
+  }, []);
+
+  const getTaskFromServer = async () => {
+    const data = await fetchTasks();
+    setTasks(data.result);
+  };
 
   const addTask = (task) => {
     // addTask is a function that takes in a task

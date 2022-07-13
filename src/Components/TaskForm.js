@@ -43,7 +43,7 @@ export const TaskForm = ({ addTask }) => {
         <Col md="3">
           <Form.Control
             name="hours"
-            placeholder="10"
+            placeholder=""
             type="number"
             required
             onChange={handleOnChange}
@@ -59,12 +59,3 @@ export const TaskForm = ({ addTask }) => {
     </Form>
   );
 };
-
-// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-// You may assume that each input would have exactly one solution, and you may not use the same element twice.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-
-//nums is an array of integers, target is an integer
-// twoSum is a function that takes in an array of integers and an integer
-var twoSum = function (nums, target) {};

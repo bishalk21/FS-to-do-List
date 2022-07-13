@@ -52,7 +52,7 @@ export const TaskList = ({
                     />{" "}
                   </td>
                   <td>{item.task}</td>
-                  <td>{item.hours} hrs</td>
+                  <td>{item.hours}</td>
                   <td>
                     {arrow === "right" ? (
                       <Button
